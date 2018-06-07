@@ -1,0 +1,131 @@
+html{
+	user-select: none;
+}
+body{
+	background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/purty_wood.png");
+	overflow: hidden;
+}
+nav{
+	text-align: center;
+}
+.navbar-toggle{
+	overflow: hidden;
+}
+.main-wrapper{
+	height: 94vh;
+	padding-top: 30px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.btn-wrapper{
+	width: 200px;
+	height: 100px;
+	margin: auto;
+	margin-bottom: 15%;
+}
+.main-wrapper button{
+	font-size: 3em;
+	width: 200px;
+	height: 100px;
+	overflow: hidden;
+	position: absolute;
+}
+
+/*#I{
+	background-image: url("../images/1.jpg");
+	background-size: cover;
+}
+#II{
+	background-image: url("../images/2.jpg");
+	background-size: cover;
+}
+#III{
+	background-image: url("../images/3.jpg");
+	background-size: cover;
+}
+#IV{
+	background-image: url("../images/4.jpg");
+	background-size: cover;
+}
+#V{
+	background-image: url("../images/5.jpg");
+	background-size: cover;
+}
+#VI{
+	background-image: url("../images/6.jpg");
+	background-size: cover;
+}
+#VII{
+	background-image: url("../images/7.jpg");
+	background-size: cover;
+}
+#VIII{
+	background-image: url("../images/8.jpg");
+	background-size: cover;
+}
+#IX{
+	background-image: url("../images/9.jpg");
+	background-size: cover;
+}
+#X{
+	background-image: url("../images/10.jpg");
+	background-size: cover;
+}
+#XI{
+	background-image: url("../images/11.jpg");
+	background-size: cover;
+}
+#XII{
+	background-image: url("../images/12.jpg");
+	background-size: cover;
+}*/
+
+.footer{
+	padding-top: 2%;
+	color: grey;
+	background-color: #151515;
+	text-align: center;
+}
+.copyright{
+	padding-top: 1.5%;
+	padding-bottom: 2%;
+	background-color: black;
+}
+	/*Scroll Bar
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #666; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #333; 
+}*/
+	/*Ripple effect on buttons*/
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(150, 150, 150, .8);
+  transform: scale(0);
+  position: absolute;
+  opacity: 1;
+}
+.rippleEffect {
+    animation: rippleDrop .6s linear;
+}
+@keyframes rippleDrop {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+}
