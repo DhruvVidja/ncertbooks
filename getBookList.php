@@ -1,5 +1,4 @@
 <?php
-global $query;
 $query = $_GET['query'];
 
 switch ($query) {
@@ -11,7 +10,6 @@ switch ($query) {
             connectDatabase();
 
             $sql = "SELECT * FROM book_list WHERE class = '".$_GET['class']."'";
-            //$sql = "SELECT DISTINCT subject FROM book_list WHERE class = '".$_GET['class']."'";
 
             $result = $db->query($sql);
 
@@ -71,8 +69,8 @@ function displayData($result){
         }
         //to get all the distinct subjects
         $subject = array_values(array_unique(array_map(function($elem){return $elem['subject'];}, $bookList)));
-        
-        //made an array with key as subject i.e. $data = [subname => [array of books], subname2 => [array of books...]]
+
+        //made an array with key as subject i.e. $data = [subname1 => [array of books], subname2 => [array of books...]]
         foreach ($subject as $sub) {
             foreach ($bookList as $book) {
                 if($book['subject'] == $sub){
@@ -82,21 +80,22 @@ function displayData($result){
         }
 
         //sending data to modal
+        echo '<div class="row">';
         foreach ($data as $key => $value) {
-            echo "<div class=\"row\">";
-            echo "<div class=\"col-sm-6 col-md-4\" style=\"text-align:center;\">";
+            echo '<div class="col-sm-6" style="text-align:center;">';
             echo'<h4>'.$key.'</h4>';
             foreach ($value as $book) {
                 if($book['flag'] == 1){
                     $book['book_name'] = $book['book_name']."(Compressed File)";
                 }
-                /*if($query == 'search'){
+                if($GLOBALS['query'] == 'search'){
                     $book['book_name'] = $book['book_name'].'(class-'.$book['class'].')';
-                }    */         
-                echo '<p><a href="'.$book['link'].'">'.$book['book_name'].'</a></p>';
+                }
+                echo '<a href="'.$book['link'].'">'.$book['book_name'].'</a><br/>';
             }
-            echo "</div>";
+            echo "<hr/></div>";
         }
+        echo "</div>";
     }else{
         echo 'Content not found...';
     }
