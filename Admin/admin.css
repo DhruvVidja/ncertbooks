@@ -9,7 +9,7 @@
 	height: 300px;
 	border-radius: 10px;
 	border: 3px solid;
-	overflow: auto;
+	overflow: hidden;
 }
 #form{
 	display: flex;

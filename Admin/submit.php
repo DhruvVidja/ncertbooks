@@ -13,7 +13,7 @@
     	$sql = "INSERT INTO book_list(class, subject, book_name, link, flag) VALUES ('".$_GET['class']."','".$_GET['subject']."','".$_GET['book_name']."','".$_GET['link']."','".isset($_GET['flag'])."')";
         
         $result = $db->query($sql);
-        header("Location:admin.php?result=".$result);
+        header("Location:index.php?result=".$result);
         exit;
     }
 

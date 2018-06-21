@@ -82,8 +82,9 @@ function displayData($result){
         //sending data to modal
         echo '<div class="row">';
         foreach ($data as $key => $value) {
-            echo '<div class="col-sm-6" style="text-align:center;">';
-            echo'<h4>'.$key.'</h4>';
+            echo '<div class="col-sm-6">
+                <h4  style="text-align:center;">'.$key.'</h4>
+                <table>';
             foreach ($value as $book) {
                 if($book['flag'] == 1){
                     $book['book_name'] = $book['book_name']."(Compressed File)";
@@ -91,11 +92,15 @@ function displayData($result){
                 if($GLOBALS['query'] == 'search'){
                     $book['book_name'] = $book['book_name'].'(class-'.$book['class'].')';
                 }
-                echo '<a href="'.$book['link'].'">'.$book['book_name'].'</a><br/>';
+                echo '<tr>
+                        <td>&#9679;&nbsp;</td>
+                        <td><a href="'.$book['link'].'">'.$book['book_name'].'</a></td>
+                    </tr>';
             }
-            echo "<hr/></div>";
+            echo'</table>';
+            echo '<hr/></div>';
         }
-        echo "</div>";
+        echo '</div>';
     }else{
         echo 'Content not found...';
     }
