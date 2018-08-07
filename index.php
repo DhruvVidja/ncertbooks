@@ -53,6 +53,8 @@
 			</div>
 			<?php include 'footer.php';?>
 		</div>
+
+		<!--Modal structure defination-->
 		<div class="modal fade" id="book-list" role="dialog">
     		<div class="modal-dialog">
       			<div class="modal-content">
@@ -62,16 +64,19 @@
         			</div>
         			<div class="modal-body"></div>
         			<div class="modal-footer">
-        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        				<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>
         			</div>
       			</div>
     		</div>
   		</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  		<!--<script src="assets/bootstrap.min.js"></script>-->
-  		<script>window.jQuery || document.write("<script src=\"assets/jquery-3.3.1.min.js\"><\/script>")</script>
-  		<!--for generating ripple on click in buttons-->
+		<script>window.jQuery || document.write('<script src="assets/jquery-3.3.1.min.js"><//script>');</script>
+  		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+  		<script src="assets/bootstrap.min.js"></script>
+  		
+  		
+		  <!--for generating ripple on click in buttons-->
   		<script type="text/javascript">
   			$("button").click(function (e) {
 
@@ -108,6 +113,7 @@
   					}).addClass("rippleEffect");
   			});
 		</script>
+
 		<!--for getting modal content-->
 		<script type="text/javascript">
 			$('document').ready(function(){
@@ -115,8 +121,10 @@
 					var id = $(this).children("button").attr("id");
 					$('.modal-title').text("Class "+id);
     				$('.modal-body').load('getBookList.php?query=byclass&class='+id, function(){
+						console.log($('.modal-body').text());
         				$('#book-list').modal({show:true});
     				});
+					
 				});
 				$('form').on('submit', function(){
 					var searchString = $('#search-box').val();
@@ -129,5 +137,6 @@
 			});
 
 		</script>
+
 	</body>
 </html>

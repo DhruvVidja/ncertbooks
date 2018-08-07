@@ -1,6 +1,6 @@
-/*html{
+html{
 	user-select: none;
-}*/
+}
 body{
 	background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/purty_wood.png");
 	overflow: hidden;
@@ -30,7 +30,9 @@ nav{
 	overflow: hidden;
 	position: absolute;
 }
-
+a:hover {
+	text-decoration: none;
+}
 /*#I{
 	background-image: url("../images/1.jpg");
 	background-size: cover;
