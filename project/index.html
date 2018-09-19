@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>NCERT TextBooks</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+		<link rel="stylesheet" href="assets/bootstrap.min.css">
+	</head>
+	
+	<body>
+		<div class="main-wrapper">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/"><span class="text-primary" style="font-size: 130%;">NCERT Textbooks</span></a>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<form class="navbar-form navbar-right" id="search-form">
+							<div class="input-group">
+							<input type="text" class="form-control" id="search-box" onfocus="this.value=''" placeholder="Enter book name" name="search" required/>
+								<div class="input-group-btn">
+									<button class="btn btn-default" type="submit" style="overflow: hidden;">&#128269;</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</nav>
+			<br><br>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="I" class="btn btn-default">1</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="II" class="btn btn-default">2</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="III" class="btn btn-default">3</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="IV" class="btn btn-default">4</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="V" class="btn btn-default">5</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="VI" class="btn btn-default">6</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="VII" class="btn btn-default">7</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="VIII" class="btn btn-default">8</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="IX" class="btn btn-default">9</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="X" class="btn btn-default">10</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="XI" class="btn btn-default">11</button></div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="btn-wrapper"><button id="XII" class="btn btn-default">12</button></div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="row">
+					<div class="col-sm-6">
+							<h3>My Objective</h3>
+							<p style="text-align: left; margin-left: 5%;">In India, we consider NCERT carriculum as the standard among others as it focus on understanding based learning and not just mug up. It helps not only during the school life, but also to prepare for many government and other exams. so, here comes this website. it's an attempt to make available all the NCERT textbook as <strong>one single PDF file</strong>.</p>
+					</div>
+					<div class="col-sm-6">
+						<h3>Helpful Links</h3>
+						<ul>
+							<li><a href="http://ncert.nic.in/textbook/textbook.htm" target="_new">Online Textbooks</a></li>
+							<li><a href="http://ciet.nic.in/Audiobooks1.php" target="_new">Audio Textbooks</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row copyright">Developed by <a href="mailto:contact@ncertbooks.epizy.com">Dhruv Patel</a></div>
+			</div>
+		</div>
+
+		<!--Modal structure defination-->
+		<div class="modal fade" id="book-list" role="dialog">
+    		<div class="modal-dialog">
+      			<div class="modal-content">
+       				 <div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal" style="color:red;">&times;</button>
+        				<h2 class="modal-title text-primary"></h2>
+        			</div>
+        			<div class="modal-body"></div>
+        			<div class="modal-footer">
+        				<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>
+        			</div>
+      			</div>
+    		</div>
+  		</div>
+
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+		<script src="assets/jquery-3.3.1.min.js"></script>
+	  	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+	  	<script src="assets/bootstrap.min.js"></script>
+	  	<script src="assets/data.js"></script>
+
+		<!--for generating ripple on click in buttons-->
+	  	<script type="text/javascript">
+  			$("button").click(function (e) {
+
+ 				// Remove any old one
+  				$(".ripple").remove();
+
+  				// Setup
+  				var posX = $(this).offset().left,
+      				posY = $(this).offset().top,
+      				buttonWidth = $(this).width()*1.5,
+      				buttonHeight =  $(this).height()*1.5;
+
+  				// Add the element
+  				$(this).prepend("<span class='ripple'></span>");
+
+ 				// Make it round!
+  				if(buttonWidth >= buttonHeight) {
+    				buttonHeight = buttonWidth;
+  				} else {
+    				buttonWidth = buttonHeight;
+  				}
+
+  				// Get the center of the element
+  				var x = e.pageX - posX - buttonWidth / 2;
+  				var y = e.pageY - posY - buttonHeight / 2;
+
+
+  				// Add the ripples CSS and start the animation
+  				$(".ripple").css({
+    				width: buttonWidth,
+    				height: buttonHeight,
+    				top: y + 'px',
+    				left: x + 'px'
+  					}).addClass("rippleEffect");
+  			});
+		</script>
+
+		 <!--for getting modal content-->
+		<script type="text/javascript">
+			function displayData(classBookList){
+				let html = '';
+				html += '<div class="row">';
+				for (subject in classBookList) {
+					html += '<div class="col-sm-6"><h4 style="text-align:center;">'+subject+'</h4>';
+					html += '<ul>';
+					for (var i = 0; i<=classBookList[subject].length - 1; i++) {
+						if(classBookList[subject][i].flag == 1){
+							classBookList[subject][i].book_name += '(Compressed File)';
+						}
+						html += '<li>&#9679;&nbsp;&nbsp;<a href="'+classBookList[subject][i].link+'">'+classBookList[subject][i].book_name+'</a></li>';
+					}
+					html += '<hr/></ul></div>';
+				}
+				html += '</div>';
+				return html;
+			}
+			$('document').ready(function(){
+				$('.btn-wrapper').on('click',function(){
+					var id = $(this).children("button").attr("id");
+					$('.modal-title').text("Class "+id);
+					$('.modal-body').html(function(){
+						let classBookList = new Array();
+						for (var i = 0; i <= bookList[id].length - 1; i++) {
+							if(classBookList[bookList[id][i].subject]){
+								classBookList[bookList[id][i].subject].push(bookList[id][i]);
+							}else{
+								classBookList[bookList[id][i].subject] = new Array();
+								classBookList[bookList[id][i].subject].push(bookList[id][i]);
+							}
+						}
+						return displayData(classBookList);
+					});
+					$('#book-list').modal({show:true});
+				});
+				$('#search-form').on('submit', function(){
+					var searchString = $('#search-box').val();
+					$('.modal-title').text("Search result for '"+searchString+"'");
+					$('.modal-body').html(function(){
+						let classBookList = new Array();
+						let regex = new RegExp(searchString,"ig");
+						for (var key in bookList) {
+							for (var i = 0; i <= bookList[key].length - 1; i++) {
+								if(bookList[key][i].subject.match(regex) || bookList[key][i].book_name.match(regex)){
+									if(!classBookList[bookList[key][i].subject]){
+										classBookList[bookList[key][i].subject] = new Array();
+									}
+									bookList[key][i].book_name += '(class-' +bookList[key][i].class+ ')';
+									classBookList[bookList[key][i].subject].push(bookList[key][i]);
+								}
+							}
+						}
+						return displayData(classBookList);
+					});
+					if ($('.modal-body div div').html() == undefined) {
+						$('.modal-body').html('No match found');
+					}
+					$('#book-list').modal({show:true});
+					return false;
+				});
+			});
+		</script>
+
+	</body>
+</html>
