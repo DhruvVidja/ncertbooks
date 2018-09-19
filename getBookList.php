@@ -1,17 +1,24 @@
 <?php
-$query = $_GET['query'];
+
+$query = trim($_GET['query']);
 
 switch ($query) {
 
     case 'byclass':
 
-        if(!empty($_GET['class'])){
+        if(isset($_GET['class'])){
 
             connectDatabase();
 
-            $sql = "SELECT * FROM book_list WHERE class = '".$_GET['class']."'";
+            $stmt = $db->prepare('SELECT * FROM book_list WHERE class = ?');
 
-            $result = $db->query($sql);
+            $class = trim($_GET['class']);
+
+            $stmt->bind_param('s', $class);
+
+            $stmt->execute();
+
+            $result = $stmt->get_result();
 
             displayData($result);
 
@@ -23,13 +30,19 @@ switch ($query) {
     break;
 
     case 'search':
-        if(!empty($_GET['searchString'])){
+        if(isset($_GET['searchString'])){
 
             connectDatabase();
 
-            $sql = "SELECT * FROM book_list WHERE subject LIKE '%".$_GET['searchString']."%' OR book_name LIKE '%".$_GET['searchString']."%'";
+            $stmt = $db->prepare('SELECT * FROM book_list WHERE subject LIKE ? OR book_name LIKE ?');
 
-            $result = $db->query($sql);
+            $searchString = '%'.trim($_GET['searchString']).'%';
+
+            $stmt->bind_param('ss', $searchString, $searchString);
+
+            $stmt->execute();
+
+            $result = $stmt->get_result();            
 
             displayData($result);
 
@@ -45,6 +58,8 @@ switch ($query) {
     break;
 }
 
+
+//Database Connection
 function connectDatabase(){
     //DB details
     $dbHost = 'localhost';
@@ -56,18 +71,20 @@ function connectDatabase(){
     //Create connection and select DB
     $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-    //displaying error, if any
+    //displaying errors, if any
     if ($db->connect_error) {
     die("Unable to connect database: " . $db->connect_error);
     }
 }
 
+//Formatting & Sending output data
 function displayData($result){
     if ($result->num_rows > 0) {
         while ($book = $result->fetch_assoc()) {
             $bookList[] = $book;
         }
-        //to get all the distinct subjects
+
+        //To get all the distinct subjects
         $subject = array_values(array_unique(array_map(function($elem){return $elem['subject'];}, $bookList)));
 
         //made an array with key as subject i.e. $data = [subname1 => [array of books], subname2 => [array of books...]]

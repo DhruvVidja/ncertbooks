@@ -8,10 +8,12 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 		<link rel="stylesheet" href="assets/bootstrap.min.css">
+		<link rel="shortcut icon" href="icon.png" >
 	</head>
 	<body>
 		<?php include 'header.php';?>
 		<br><br>
+		<!-- Page Layout -->
 		<div class="main-wrapper">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -53,14 +55,14 @@
 			</div>
 			<?php include 'footer.php';?>
 		</div>
-
+		
 		<!--Modal structure defination-->
 		<div class="modal fade" id="book-list" role="dialog">
     		<div class="modal-dialog">
       			<div class="modal-content">
        				 <div class="modal-header">
-        				<button type="button" class="close" data-dismiss="modal">&times;</button>
-        				<h2 class="modal-title"></h2>
+        				<button type="button" class="close" data-dismiss="modal" style="color:red;">X</button>
+        				<h2 class="modal-title text-primary"></h2>
         			</div>
         			<div class="modal-body"></div>
         			<div class="modal-footer">
