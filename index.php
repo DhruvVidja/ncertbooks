@@ -6,9 +6,9 @@
 		<title>NCERT TextBooks</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-		<link rel="stylesheet" href="assets/bootstrap.min.css">
-		<link rel="shortcut icon" href="icon.png" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="assets/bootstrap.min.css"> -->
+		<link rel="shortcut icon" href="favicon.png" >
 	</head>
 	<body>
 		<?php include 'header.php';?>
@@ -59,10 +59,10 @@
 		<!--Modal structure defination-->
 		<div class="modal fade" id="book-list" role="dialog">
     		<div class="modal-dialog">
-      			<div class="modal-content">
-       				 <div class="modal-header">
+      			<div class="modal-content" style="border: 5px solid #337ab7; border-radius: 5px">
+       				 <div class="modal-header bg-primary">
         				<button type="button" class="close" data-dismiss="modal" style="color:red;">X</button>
-        				<h2 class="modal-title text-primary"></h2>
+        				<h2 class="modal-title"></h2>
         			</div>
         			<div class="modal-body"></div>
         			<div class="modal-footer">
@@ -74,8 +74,8 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="assets/jquery-3.3.1.min.js"><//script>');</script>
-  		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-  		<script src="assets/bootstrap.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<!-- <script src="assets/bootstrap.min.js"></script> -->
   		
   		
 		  <!--for generating ripple on click in buttons-->
