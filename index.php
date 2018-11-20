@@ -78,7 +78,7 @@
   		<!-- <script src="assets/bootstrap.min.js"></script> -->
   		
   		
-		  <!--for generating ripple on click in buttons-->
+		<!--for generating ripple on click in buttons-->
   		<script type="text/javascript">
   			$("button").click(function (e) {
 

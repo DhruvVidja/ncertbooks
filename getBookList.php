@@ -8,21 +8,21 @@ switch ($query) {
 
         if(isset($_GET['class'])){
 
-            connectDatabase();
+	            connectDatabase();
 
-            $stmt = $db->prepare('SELECT * FROM book_list WHERE class = ?');
+	            $stmt = $db->prepare('SELECT * FROM book_list WHERE class = ?');
 
-            $class = trim($_GET['class']);
+	            $class = trim($_GET['class']);
 
-            $stmt->bind_param('s', $class);
+	            $stmt->bind_param('s', $class);
 
-            $stmt->execute();
+	            $stmt->execute();
 
-            $result = $stmt->get_result();
+	            $result = $stmt->get_result();
 
-            displayData($result);
+	            displayData($result);
 
-            $db->close();
+	            $db->close();
 
         }else{
             echo 'Content not found....';

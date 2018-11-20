@@ -13,6 +13,6 @@
         </div>
     </div>
     <div class="row copyright">
-        Designed and Developed by <a href="mailto:d120070109060@gmail.com">Dhruv Patel</a>
+        Developed by <strong><a href="mailto:d120070109060@gmail.com">Dhruv Patel</a></strong>
     </div>
 </div>
